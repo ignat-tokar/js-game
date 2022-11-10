@@ -1,7 +1,7 @@
 {
     "name": "2D js-game",
     "short_name": "JS-game",
-    "start_url": "index.html",
+    "start_url": "/js-game/index.html",
     "description": "2D js-game build supposed by Ateros javascript crash course",
     "icons": [
         {

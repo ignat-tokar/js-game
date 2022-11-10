@@ -1334,6 +1334,7 @@
 			btn2.style.border = 'none';
 			// btn2.style.display = 'none';
 			btn2.addEventListener('click', () => {
+				console.log('hello');
 				// div.style.display = 'none';
 				// fsBtn.src = 'cancel.png';
 				// canvas.requestFullscreen();	
@@ -1354,11 +1355,14 @@
 			addStartScreen();
 		}
 		start();
+		
 		window.addEventListener('beforeinstallprompt', (event) => {
 			event.preventDefault();
+			console.log('hello1');
 			let installBtn = window.document.querySelector('#install-btn');
 			installBtn.style.display = 'block';
 			installBtn.addEventListener('click', () => {
+				console.log('hello2');
 				event.prompt();
 			})
 
