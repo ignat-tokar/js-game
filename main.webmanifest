@@ -9,7 +9,5 @@
             "type": "image/png"
         }
     ],
-    "display": "fullscreen",
-    "theme_color": "#38002c",
-    "background_color": "#38002c"
+    "display": "fullscreen"
 }
