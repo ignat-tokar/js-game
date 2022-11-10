@@ -1334,7 +1334,7 @@
 			btn2.style.border = 'none';
 			// btn2.style.display = 'none';
 			btn2.addEventListener('click', () => {
-				console.log('hello');
+				// console.log('hello');
 				// div.style.display = 'none';
 				// fsBtn.src = 'cancel.png';
 				// canvas.requestFullscreen();	
@@ -1355,17 +1355,36 @@
 			addStartScreen();
 		}
 		start();
-		
-		window.addEventListener('beforeinstallprompt', (event) => {
-			event.preventDefault();
-			console.log('hello1');
-			let installBtn = window.document.querySelector('#install-btn');
-			installBtn.style.display = 'block';
-			installBtn.addEventListener('click', () => {
-				console.log('hello2');
-				event.prompt();
-			})
 
+		// Code to handle install prompt on desktop
+
+		let insBtn = window.document.querySelector('#install-btn');
+		// insBtn.onclick = () => console.log('hello world');
+		insBtn.style.display = 'none';
+
+		window.addEventListener('beforeinstallprompt', (e) => {
+			// Prevent Chrome 67 and earlier from automatically showing the prompt
+			e.preventDefault();
+			// Stash the event so it can be triggered later.
+			let deferredPrompt = e;
+			// Update UI to notify the user they can add to home screen
+			insBtn.style.display = 'block';
+
+			insBtn.addEventListener('click', () => {
+				// hide our user interface that shows our A2HS button
+				insBtn.style.display = 'none';
+				// Show the prompt
+				deferredPrompt.prompt();
+				// Wait for the user to respond to the prompt
+				deferredPrompt.userChoice.then((choiceResult) => {
+				if (choiceResult.outcome === 'accepted') {
+					console.log('User accepted the A2HS prompt');
+				} else {
+					console.log('User dismissed the A2HS prompt');
+				}
+				deferredPrompt = null;
+				});
+			});
 		});
 	</script>	
 </body>
