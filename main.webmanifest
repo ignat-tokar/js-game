@@ -1,0 +1,15 @@
+{
+    "name": "2D js-game",
+    "short_name": "JS-game",
+    "description": "2D js-game build supposed by Ateros javascript crash course",
+    "icons": [
+        {
+            "src": "assets/lever.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "display": "fullscreen",
+    "theme_color": "#38002c",
+    "background_color": "38002c"
+}
