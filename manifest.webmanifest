@@ -4,7 +4,7 @@
     "start_url": "/js-game/index.html",
     "description": "2D js-game build supposed by Ateros javascript crash course",
     "orientation": "landscape",
-    "display": "browser",
+    "display": "minimal-ui",
     "icons": [
         {
             "src": "assets/lever.png",
