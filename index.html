@@ -1357,6 +1357,11 @@
 		start();
 
 		// Code to handle install prompt on desktop
+		if ('serviceWorker' in navigator) {
+		navigator.serviceWorker
+			.register('/js-game/sw.js')
+			.then(() => { console.log('Service Worker Registered'); });
+		}
 
 		let insBtn = window.document.querySelector('#install-btn');
 		// insBtn.onclick = () => console.log('hello world');
