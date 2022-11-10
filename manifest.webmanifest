@@ -3,7 +3,6 @@
     "short_name": "JS-game",
     "start_url": "/js-game/index.html",
     "description": "2D js-game build supposed by Ateros javascript crash course",
-    "display": "fullscreen",
     "orientation": "landscape",
     "icons": [
         {
